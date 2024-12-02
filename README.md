@@ -14,6 +14,19 @@ Screenshots: https://docs.google.com/document/d/1rPDiQx314RmUi7b1leXQcHVeWyWl4ev
 
 [Log of progress](src/docs/activityLog.md)
 
+### Workflow Plan:
+- Create 3 branches from main:
+  1. frontend (all front-end changes - GUI/React.js) 
+  2. backend (all back-end changes - Connecting database and GUI/java or python)
+  3. database (any changes to the database configuration)
+ 
+  ^ Any members (though working predominantly on their respective area), can independently work on the tasks on each branch, submitting pull requests to the respective branch to the work they've done.
+
+Team should **submit a pull request** to the **respective branch** after making changes, and do NOT make changes without a pull request - and should only make pull requests to main.
+
+Only once frontend, backend, and database are complete then we merge these into main (at the end) via pull requests. 
+
+Regularly update frontend/backend/database as we go, main right at the end.
 
 ## Key Features:
 
