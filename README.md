@@ -11,7 +11,7 @@ Screenshots: https://docs.google.com/document/d/1rPDiQx314RmUi7b1leXQcHVeWyWl4ev
 
 #### Documentation
 [Engineering Design Review (EDR)](src/docs/LukeThornley%20EDR%20-%202398180.pdf)
-[Log of progress](src/docs/log.md)
+[Log of progress] (src/docs/activityLog.md)
 
 ### Key Features:
 
