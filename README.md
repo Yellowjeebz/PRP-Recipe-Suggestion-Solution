@@ -11,29 +11,31 @@ Screenshots: https://docs.google.com/document/d/1rPDiQx314RmUi7b1leXQcHVeWyWl4ev
 
 #### Documentation
 [Engineering Design Review (EDR)](src/docs/LukeThornley%20EDR%20-%202398180.pdf)
+
 [Log of progress](src/docs/activityLog.md)
 
-### Key Features:
 
-## **IDEs / Languages Used**  
-### **IDEs**:  
+## Key Features:
+
+### **IDEs / Languages Used**  
+#### **IDEs**:  
 - IntelliJ (Frontend & Backend).  
 
 
-### **Languages**:  
+#### **Languages**:  
 - **Backend**: Java
 - **Frontend**: Java
 - **Database**: SQL for relational data.  
 
-## **Project Responsibilities**  
-### **Team Members and Roles**  
+### **Project Responsibilities**  
+#### **Team Members and Roles**  
 - **Git and Project Manager-** Phoebe Farrelly
 - **Database Lead-** Maya Sahota
 - **Lead Developer-** Luke Thornley
 - **GUI Designer-** Luke Deery
 
 
-### **Modules and Leads**  
+### **Modules/Sections of project and Responsbilities**  
 - **Fridge Content Management**: 
 
 
