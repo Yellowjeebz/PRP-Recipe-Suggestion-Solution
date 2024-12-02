@@ -1,0 +1,1 @@
+800 word report on how the prototype was accomplished, with an emphasis on demonstrating aspects of the group work that aren’t reflected in the code repository
