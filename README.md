@@ -1,3 +1,4 @@
+
 # PRP-Recipe-Suggestion-Solution
 A smart home solution for taking food in your fridge and suggesting recipes from the food available.
 
@@ -14,19 +15,60 @@ Screenshots: https://docs.google.com/document/d/1rPDiQx314RmUi7b1leXQcHVeWyWl4ev
 
 [Log of progress](src/docs/activityLog.md)
 
-### Workflow Plan:
+---
+
+## Workflow:
 - Create 3 branches from main:
-  1. frontend (all front-end changes - GUI/React.js) 
-  2. backend (all back-end changes - Connecting database and GUI/java or python)
-  3. database (any changes to the database configuration)
- 
+  1. Frontend (all front-end changes - GUI/React.js) 
+  2. Backend (all back-end changes - Connecting database and GUI/java or python)
+  3. Database (any changes to the database configuration)
   ^ Any members (though working predominantly on their respective area), can independently work on the tasks on each branch, submitting pull requests to the respective branch to the work they've done.
 
-Team should **submit a pull request** to the **respective branch** after making changes, and do NOT make changes without a pull request - and should only make pull requests to main.
+Team should **submit a pull request** to the **respective base branch of their current unit** after making changes, and do NOT make changes without a pull request - and should only make pull requests to main.
 
-Only once frontend, backend, and database are complete then we merge these into main (at the end) via pull requests. 
+### Branching
+- Create 3 branches from the main branch - these will be maintained rather than deleting when making PRs from them:
+  1. **`frontend`**: All front-end changes (e.g., GUI/React.js).
+  2. **`backend`**: All back-end changes (e.g., database connections, business logic in Java or Python).
+  3. **`database`**: Any changes to database schemas or configurations.
+  
+  ^ While members primarily focus on their respective 'major units', they can contribute to other branches if required. Changes should be submitted through pull requests for the relevant branch.
 
-Regularly update frontend/backend/database as we go, main right at the end.
+### PRs
+-  **Making changes**:
+   - Changes must be submitted through a **pull request (PR)** into the  respective branch (frontend, backend, database).
+   - Do NOT make changes directly to any branch without a pull request.
+   - Pull requests to the `main` branch are only allowed through `frontend`, `backend`, and `database` branches when changes have been tested and approved.
+   - Small changes to `main` will be made with the `main-changes` branch.
+
+-  **Approval Workflow**:
+   - Every pull request must be approved by PF/a peer, especially for the `main`, checking:
+     - **the code works and makes sense with the rest of the project** 
+     - **writeup/message and style** matching set project conventions, matching the rest of the project and the EDR design.
+
+    
+- **Pull Request Template**:
+     When making PRs/commits, write with as much detail and explanation as to why the changes you've made have been implemented. 
+     Branches should following naming conventions (i.e. fridge-database-Maya-Patch-CSV) so that this can be tracked in the history log of closed PRs/commits.
+     Write info in the template as follows:
+
+#### Contribution Guidelines (Things to consider/include):
+     Brief summary of the changes made
+     Unit / Kanban task it relates to
+     Testing Performed (if any)
+     Other areas that this change may impact (if any)
+     Anyone who should review this work
+     
+   Checklist before making PRs/Commits: 
+     - Tests have been written/updated where necessary.
+     - Documentation has been updated (if applicable).
+     - Feature/branch you're PRing to has been merged with the latest `main` or at least latest `database`/`frontend`/`backend` branch.
+
+## Testing Guidelines
+#### Frequent Testing:
+   - Create tests when implementing a new feature.
+   - Run these tests before making a PR that makes significant changes in a feature branch.
+   - Tests must pass before creating a pull request to merge into `main`.
 
 ## Key Features:
 
