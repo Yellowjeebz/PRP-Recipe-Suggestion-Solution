@@ -1,28 +1,36 @@
 CREATE DATABASE recipe_suggestion_solution;
 \c recipe_suggestion_solution
 
-CREATE TABLE fridge_contents 
+CREATE TABLE recipe 
 (
-    food_item character varying (50),
-    item_quantity integer NOT NULL,
-    item_weight integer NOT NULL,
-    expiry_date DATE NOT NULL,
-    item_owner character varying (50)
+    recipe_ID integer NOT NULL,
+    recipe_name character varying (255) NOT NULL,
+    recipe_steps character varying (2048) NOT NULL
 );
 
-CREATE TABLE dish_recipe
+CREATE TABLE ingredients
 (
-    recipe_name character varying (50),
-    preperation_steps character varying (50),
-    required_ingredients character varying (50),
-    quantity_required integer NOT NULL,
-    weight_required integer NOT NULL
+    ingredient_ID integer NOT NULL,
+    ingredient_name character varying (255) NOT NULL
 );
 
-CREATE TABLE shopping_list
+CREATE TABLE recipe_ingredients
 (
-    incomplete_recipe character varying (50),
-    food_item character varying (50),
-    absolute_quantity integer NOT NULL,
-    absolute_weight integer NOT NULL
+    recipe_ID integer NOT NULL,
+    ingredient_ID integer NOT NULL,
+    quantity integer NOT NULL
+);
+
+CREATE TABLE student_house 
+(
+    student_id integer NOT NULL,
+    student_name varchar (255),
+    house_id integer
+);
+
+CREATE TABLE fridge_contents(
+    ingredient_ID integer NOT NULL,
+    ingredient_quantity integer NOT NULL,
+    ingredient_date DATE NOT NULL, 
+    student_id integer NOT NULL
 );
