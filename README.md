@@ -18,6 +18,16 @@ Screenshots: https://docs.google.com/document/d/1rPDiQx314RmUi7b1leXQcHVeWyWl4ev
 ---
 
 ## Workflow:
+
+### Daily Workflow
+**Group Meeting** - discussing units of work and what is to be tackled today. Ensure all 'feature' branches are up to date (have PR from the main). This is recorded in 'meeting notes' found in `docs/Group Meetings`
+
+**Independent Work** - working locally, each group member works on their 'Unit'.
+
+**Activity Log Update** - at the end of the day, each member writes down their work in `docs/activityLog.md`
+
+---
+### General Workflow
 - Create 3 branches from main:
   1. Frontend (all front-end changes - GUI/React.js) 
   2. Backend (all back-end changes - Connecting database and GUI/java or python)
