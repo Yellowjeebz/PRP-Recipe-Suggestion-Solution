@@ -15,5 +15,20 @@ We met and discussed how we can tailor our current plan to ensure it fits with t
     - Custom continuous integration workflow
     - Testing
 
+## To dos:
+### PF
+Familiarise with prototype brief and set goals
+
+### LT
+Support PF with Github building
+Configure backend
+
+### LD
+Configure front end, start sculpting ideas for GUI
+
+### MS
+Populate database with .csv files, based on exemplar fridge contents and recipes
+
+
 ## Wrap up
 - At the end of the day, update activity log with each group members' actions that they made today.
