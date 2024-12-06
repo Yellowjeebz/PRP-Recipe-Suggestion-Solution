@@ -1,4 +1,4 @@
-fridge_ingredient_id,ingredient_quantity,ingredient_date,student_id
+fridge_ingredient_id,ingredient_quantity,ingredient_date,student_ID
 1,3,09/06/2025,3
 2,14,20/06/2025,3
 3,42,21/06/2025,3
