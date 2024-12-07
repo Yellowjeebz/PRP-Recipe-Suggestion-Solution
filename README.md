@@ -27,15 +27,6 @@ Screenshots: https://docs.google.com/document/d/1rPDiQx314RmUi7b1leXQcHVeWyWl4ev
 **Activity Log Update** - at the end of the day, each member writes down their work in `docs/activityLog.md`
 
 ---
-### General Workflow
-- Create 3 branches from main:
-  1. Frontend (all front-end changes - GUI/React.js) 
-  2. Backend (all back-end changes - Connecting database and GUI/java or python)
-  3. Database (any changes to the database configuration)
-  ^ Any members (though working predominantly on their respective area), can independently work on the tasks on each branch, submitting pull requests to the respective branch to the work they've done.
-
-Team should **submit a pull request** to the **respective base branch of their current unit** after making changes, and do NOT make changes without a pull request - and should only make pull requests to main.
-
 ### Branching
 - Create 3 branches from the main branch - these will be maintained rather than deleting when making PRs from them:
   1. **`frontend`**: All front-end changes (e.g., GUI/React.js).
@@ -106,19 +97,26 @@ Team should **submit a pull request** to the **respective base branch of their c
 
 ---
 
-## **Deadlines and Goals**  
-| **Milestone**             | **Task**                                                | **Deadline**       |
+## **Deadlines and Unit Goals**  
+| **Milestone**             | **Task/Subunit**                                                | **Deadline**       |
 |---------------------------|--------------------------------------------------------|--------------------|
-| Milestone 1               | Design Database                                        ||
-| Milestone 2               | Populate database with fridge and recipe data          ||
-| Milestone 3               | Develop recipe categorisation and shopping list logic  ||
-| Milestone 4               | Create UI for fridge contents and recipe suggestions   ||
-| Milestone 5               | Testing and optimisation for deployment                ||
+| Milestone A               | ~~Design Database~~                                        |(02/12) Done|
+| Milestone B               | ~~Populate database with fridge and recipe data~~          |(06/12) Done|
+| Milestone C               | Develop backend logic for recipe categorisation and shopping list logic  |07/12|
+| Milestone D               | Develop backend logic for personalised shopping lists  |07/12|
+| Milestone E               | Create UI for fridge contents and recipe suggestions   |07/12|
+| Milestone F               | Create UI for detailed recipe viewsfridge contents and recipe suggestions   |08/12|
+| Milestone G               | Testing and optimisation for deployment                | Ongoing, but final testing to be done by 10/12|
+| Milestone H               | Project to be containerised             |09/12|
+| Milestone H               | Completed Implementation             |09/12|
+| Milestone H               | Project Summary + Report            |10/12-11/12|
+| Milestone H               | Individual Project Reflections            |11/12-12/12|
+
 
 ---
 
 ## **Other Notes**
 - **Dependencies**:
-  - Libraries: 
+  - Libraries: Picocli
 - **Testing Frameworks**:  
-  - JUnit
+  - Gradle
