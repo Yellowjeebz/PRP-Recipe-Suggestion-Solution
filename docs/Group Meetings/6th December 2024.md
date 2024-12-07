@@ -1,4 +1,4 @@
-# Minutes of Meeting 5 (6/12/2024)
+# Minutes of Meeting 4 (6/12/2024)
 ## Discussed workflow going forward:    
 Start the day with a ```git pull``` from the main branch to local clone repositories.
 
