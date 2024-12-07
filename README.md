@@ -1,4 +1,3 @@
-
 # PRP-Recipe-Suggestion-Solution
 A smart home solution for taking food in your fridge and suggesting recipes from the food available.
 
@@ -105,12 +104,12 @@ Screenshots: https://docs.google.com/document/d/1rPDiQx314RmUi7b1leXQcHVeWyWl4ev
 | Milestone C               | Develop backend logic for recipe categorisation and shopping list logic  |07/12|
 | Milestone D               | Develop backend logic for personalised shopping lists  |07/12|
 | Milestone E               | Create UI for fridge contents and recipe suggestions   |07/12|
-| Milestone F               | Create UI for detailed recipe viewsfridge contents and recipe suggestions   |08/12|
+| Milestone F               | Create UI for detailed recipe views   |08/12|
 | Milestone G               | Testing and optimisation for deployment                | Ongoing, but final testing to be done by 10/12|
 | Milestone H               | Project to be containerised             |09/12|
-| Milestone H               | Completed Implementation             |09/12|
-| Milestone H               | Project Summary + Report            |10/12-11/12|
-| Milestone H               | Individual Project Reflections            |11/12-12/12|
+| Milestone I              | Completed Implementation             |09/12|
+| Milestone J               | Project Summary + Report            |10/12-11/12|
+| Milestone K               | Individual Project Reflections            |11/12-12/12|
 
 
 ---
