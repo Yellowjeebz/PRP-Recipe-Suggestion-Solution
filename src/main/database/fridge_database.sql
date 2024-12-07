@@ -14,6 +14,7 @@ CREATE TABLE ingredients
 (
     ingredient_ID integer NOT NULL,
     ingredient_name character varying (255) NOT NULL,
+    ingredient_units character varying (255),
     PRIMARY KEY (ingredient_ID)
 );
 
