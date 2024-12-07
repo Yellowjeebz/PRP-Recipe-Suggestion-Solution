@@ -38,9 +38,9 @@ CREATE TABLE student_house
 
 CREATE TABLE fridge_contents(
     fridge_ingredient_ID integer NOT NULL,
-    ingredient_quantity integer NOT NULL,
+    ingredient_quantity decimal NOT NULL,
     ingredient_date DATE NOT NULL, 
     student_ID integer NOT NULL,
-    PRIMARY KEY (fridge_ingredient_ID),
+    PRIMARY KEY (fridge_ingredient_ID,student_ID),
     FOREIGN KEY (student_ID) references student_house(student_ID)
 );
