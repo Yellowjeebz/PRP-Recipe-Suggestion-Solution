@@ -26,7 +26,7 @@ sourceSets {
     }
     test {
         java {
-            setSrcDirs(listOf("src/test/java"))
+            setSrcDirs(listOf("src/test/backend/java"))
         }
         resources {
             setSrcDirs(listOf("src/test/resources"))
