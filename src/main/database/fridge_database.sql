@@ -1,28 +1,45 @@
+
 CREATE DATABASE recipe_suggestion_solution;
 \c recipe_suggestion_solution
 
-CREATE TABLE fridge_contents 
+CREATE TABLE recipe 
 (
-    food_item character varying (50),
-    item_quantity integer NOT NULL,
-    item_weight integer NOT NULL,
-    expiry_date DATE NOT NULL,
-    item_owner character varying (50)
+    recipe_ID integer NOT NULL,
+    recipe_name character varying (255) NOT NULL,
+    recipe_steps character varying (2048) NOT NULL,
+    PRIMARY KEY (recipe_ID)
 );
 
-CREATE TABLE dish_recipe
+CREATE TABLE ingredients
 (
-    recipe_name character varying (50),
-    preperation_steps character varying (50),
-    required_ingredients character varying (50),
-    quantity_required integer NOT NULL,
-    weight_required integer NOT NULL
+    ingredient_ID integer NOT NULL,
+    ingredient_name character varying (255) NOT NULL,
+    PRIMARY KEY (ingredient_ID)
 );
 
-CREATE TABLE shopping_list
+CREATE TABLE recipe_ingredients
 (
-    incomplete_recipe character varying (50),
-    food_item character varying (50),
-    absolute_quantity integer NOT NULL,
-    absolute_weight integer NOT NULL
+    recipe_ID integer NOT NULL,
+    ingredient_ID integer NOT NULL,
+    quantity integer NOT NULL,
+    PRIMARY KEY (recipe_ID, ingredient_ID),
+    FOREIGN KEY (recipe_ID) references recipe(recipe_ID),
+    FOREIGN KEY (recipe_ID) references ingredients(ingredient_ID)
+);
+
+CREATE TABLE student_house 
+(
+    student_ID integer NOT NULL,
+    student_name varchar (255),
+    house_ID integer,
+    PRIMARY KEY (student_ID)
+);
+
+CREATE TABLE fridge_contents(
+    fridge_ingredient_ID integer NOT NULL,
+    ingredient_quantity integer NOT NULL,
+    ingredient_date DATE NOT NULL, 
+    student_ID integer NOT NULL,
+    PRIMARY KEY (fridge_ingredient_ID),
+    FOREIGN KEY (student_ID) references student_house(student_ID)
 );
