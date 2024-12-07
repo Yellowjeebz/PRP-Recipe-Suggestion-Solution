@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import FridgeContents from "./FridgeContents";
+import RecipeSuggestions from "./RecipeSuggestions";
 
-function App() {
+const App = () => {
+  const [fridgeContents] = useState([
+    { name: "Egg", date: "2024-12-10" },
+    { name: "Banana", date: "2024-12-09" },
+    { name: "Milk", date: "2024-12-08" },
+  ]);
+  const [recipes] = useState({
+    complete: [
+      {
+        name: "Banana Pancakes",
+        steps: ["Mix ingredients", "Cook on skillet"],
+        ingredients: ["Banana", "Egg", "Milk"],
+      },
+    ],
+    "semi-complete": [
+      {
+        name: "Scrambled Eggs",
+        steps: ["Crack eggs", "Cook on pan"],
+        ingredients: ["Egg", "Butter"],
+      },
+    ],
+    incomplete: [
+      {
+        name: "Beef Stew",
+        steps: ["Chop vegetables", "Cook meat"],
+        ingredients: ["Beef", "Carrots", "Potatoes"],
+      },
+    ],
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1>Recipe Suggestion System</h1>
+      <div className="content">
+        <FridgeContents contents={fridgeContents} />
+        <RecipeSuggestions recipes={recipes} />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
