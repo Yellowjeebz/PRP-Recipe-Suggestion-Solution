@@ -44,3 +44,4 @@ CREATE TABLE fridge_contents(
     PRIMARY KEY (fridge_ingredient_ID,student_ID),
     FOREIGN KEY (student_ID) references student_house(student_ID)
 );
+
