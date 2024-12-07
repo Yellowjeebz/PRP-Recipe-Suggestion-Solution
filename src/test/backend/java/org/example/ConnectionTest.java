@@ -3,12 +3,23 @@
  */
 package org.example;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
-class AppTest {
-    @Test void appHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.fail;
+import org.junit.jupiter.api.Test;
+
+class ConnectionTest {
+    @Test void testConnection() {
+        String url = "jdbc:postgresql://localhost:5432/recipe_suggestion_solution";
+        String user = "postgres";
+        String password = "password";
+
+        try (Connection conn = DriverManager.getConnection(url, user, password)) {
+            assertNotNull(conn, "Should have a Connection ");
+        } catch (Exception e) {
+            fail("Failed to connect to the database: " + e.getMessage());
+        }
     }
 }
