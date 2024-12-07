@@ -2,7 +2,10 @@ package org.example;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.sql.SQLException;
+
 
 public class ConnectDatabase {
 
@@ -11,11 +14,17 @@ public class ConnectDatabase {
         String user = "postgres";
         String password = "password";
 
-        try (Connection conn = DriverManager.getConnection(url, user, password)) {
+        try (Connection conn = DriverManager.getConnection(url, user, password); Statement stmt = conn.createStatement()) {
             System.out.println("Connected");
-        } catch (Exception e) {
-            System.out.println("Didn't Connect");
-            e.printStackTrace();
+            
+            String sql = "SELECT * FROM fridge_contents";
+            ResultSet rs = stmt.executeQuery(sql); 
+
+            while (rs.next()) {
+                System.out.println(rs.getString("fridge_ingredient_ID"));
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
         }
     }
 }

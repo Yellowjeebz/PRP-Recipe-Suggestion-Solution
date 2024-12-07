@@ -1,0 +1,20 @@
+# Workflow (update build) to run whenever we update main
+name: "Update Docker Build"
+on:
+  push:
+    branches:
+      - main
+      - add/docker-ci
+workflow_dispatch:
+
+jobs:
+  build:
+    name: "Build"
+    runs-on: "ubuntu-latest"
+#Workflow actions have permissions - normally read-only but we want to upload a container image that we're building
+    permissions:
+      packages: write
+      contents: read
+
+steps:
+  - name: "Checkout repository"
