@@ -1,3 +1,4 @@
+# Minutes of Meeting 3 (4/12/2024)
 ## Agenda
 We met and discussed how we can tailor our current plan to ensure it fits with the marking criteria of Prototype.pdf
 
