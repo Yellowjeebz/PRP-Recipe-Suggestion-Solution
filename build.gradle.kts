@@ -13,11 +13,7 @@ plugins {
 	id("io.spring.dependency-management") version "1.1.6"
 }
 
-java {
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(17)
-	}
-}
+
 
 sourceSets {
     main {
