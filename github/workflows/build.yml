@@ -6,15 +6,16 @@ on:
       - main
     pull_request:
     workflow_dispatch:
-
+    
 jobs:
   build:
   name: "Build"
   runs-on: "ubuntu-latest"
-
-steps:
-  - name: "Clone repo"
-    uses: actions/checkout@V4
-
-  - name: "Build project"
-    run: ./gradlew build
+  strategy:
+    matrix:
+      java-version: [8, 17, 21, 23]
+  steps:
+    - name: "Clone repo"
+      uses: actions/checkout@V4
+    - name: "Build project"
+      run: ./gradlew build

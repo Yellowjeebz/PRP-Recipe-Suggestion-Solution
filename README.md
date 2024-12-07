@@ -2,7 +2,7 @@
 A smart home solution for taking food in your fridge and suggesting recipes from the food available.
 
 ## **Project Overview**  
-This project is for developing the **Recipe Suggestion Solution (RSS)** for the Student Smart Homes (SSH) ecosystem.  
+This project is for developing the **Recipe Suggestion Solution (RSS)** for the Student Smart Homes (SSH) ecosystem. 
 
 The goal of SSH RSS is to help students optimise their meal preparation by leveraging smart home devices like the SSH Camera and SSH Cloud. The solution identifies available ingredients in the fridge, suggests complete or semi-complete recipes, and generates shopping lists for missing ingredients.  
 
@@ -45,8 +45,8 @@ Screenshots: https://docs.google.com/document/d/1rPDiQx314RmUi7b1leXQcHVeWyWl4ev
    - Every pull request must be approved by PF/a peer, especially for the `main`, checking:
      - **the code works and makes sense with the rest of the project** 
      - **writeup/message and style** matching set project conventions, matching the rest of the project and the EDR design.
-
     
+
 - **Pull Request Template**:
      When making PRs/commits, write with as much detail and explanation as to why the changes you've made have been implemented. 
      Branches should following naming conventions (i.e. fridge-database-Maya-Patch-CSV) so that this can be tracked in the history log of closed PRs/commits.
@@ -104,13 +104,12 @@ Screenshots: https://docs.google.com/document/d/1rPDiQx314RmUi7b1leXQcHVeWyWl4ev
 | Milestone C               | Develop backend logic for recipe categorisation and shopping list logic  |07/12|
 | Milestone D               | Develop backend logic for personalised shopping lists  |07/12|
 | Milestone E               | Create UI for fridge contents and recipe suggestions   |07/12|
-| Milestone F               | Create UI for detailed recipe views   |08/12|
+| Milestone F               | Create UI for detailed recipe viewsfridge contents and recipe suggestions   |08/12|
 | Milestone G               | Testing and optimisation for deployment                | Ongoing, but final testing to be done by 10/12|
 | Milestone H               | Project to be containerised             |09/12|
-| Milestone I              | Completed Implementation             |09/12|
-| Milestone J               | Project Summary + Report            |10/12-11/12|
-| Milestone K               | Individual Project Reflections            |11/12-12/12|
-
+| Milestone H               | Completed Implementation             |09/12|
+| Milestone H               | Project Summary + Report            |10/12-11/12|
+| Milestone H               | Individual Project Reflections            |11/12-12/12|
 
 ---
 

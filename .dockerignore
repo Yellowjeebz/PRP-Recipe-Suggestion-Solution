@@ -1,0 +1,5 @@
+.github/
+.gradle/
+app/build/
+.dockerignore
+# Stops random files invalidating build cache
