@@ -1,3 +1,5 @@
+package org.example;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -12,6 +14,7 @@ public class ConnectDatabase {
         try (Connection conn = DriverManager.getConnection(url, user, password)) {
             System.out.println("Connected");
         } catch (Exception e) {
+            System.out.println("Didn't Connect");
             e.printStackTrace();
         }
     }
