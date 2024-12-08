@@ -10,7 +10,7 @@ import java.sql.Statement;
 
 public class CreateDatabase {
     public static void main(String[] args){ 
-        String url = "jdbc:postgresql://localhost:5432/";
+        String url = "jdbc:postgresql://localhost:5432/postgres";
         String user = "postgres";
         String password = "password";
         String Createsql = "/fridge_database.sql"; 

@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 
 class ConnectionTest {
     @Test void testConnection() {
-        String url = "jdbc:postgresql://localhost:5432/recipe_suggestion_solution";
+        String url = "jdbc:postgresql://localhost:5432/postgres";
         String user = "postgres";
         String password = "password";
 
