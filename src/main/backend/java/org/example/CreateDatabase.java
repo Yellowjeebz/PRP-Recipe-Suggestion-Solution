@@ -11,11 +11,22 @@ import java.sql.Statement;
 public class CreateDatabase {
     public static void main(String[] args){ 
         String url = "jdbc:postgresql://localhost:5432/postgres";
+        String DBurl = "jdbc:postgresql://localhost:5432/recipe_suggestion_solution";
         String user = "postgres";
         String password = "password";
         String Createsql = "/fridge_database.sql"; 
 
         try (Connection conn = DriverManager.getConnection(url, user, password);
+            Statement stmt = conn.createStatement()){
+            
+                stmt.execute("DROP DATABASE IF EXISTS recipe_suggestion_solution;");
+                stmt.execute("CREATE DATABASE recipe_suggestion_solution;");
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try (Connection conn = DriverManager.getConnection(DBurl, user, password);
             Statement stmt = conn.createStatement();
             BufferedReader reader = new BufferedReader(new InputStreamReader(CreateDatabase.class.getResourceAsStream(Createsql)))) {
 
@@ -35,7 +46,7 @@ public class CreateDatabase {
             System.out.println("Created Database");
 
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 }

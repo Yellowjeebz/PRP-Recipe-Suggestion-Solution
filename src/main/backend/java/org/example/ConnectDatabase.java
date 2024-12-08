@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class ConnectDatabase {
 
     public static void main(String[] args){
-        String url = "jdbc:postgresql://localhost:5432/recipe_suggestion_solution";
+        String url = "jdbc:postgresql://localhost:5432/postgres";
         String user = "postgres";
         String password = "password";
 
