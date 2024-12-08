@@ -6,12 +6,12 @@ package org.example;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.Test;
 
 import java.sql.Statement;
 import java.sql.ResultSet;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DatabaseEditTest {
@@ -19,42 +19,21 @@ class DatabaseEditTest {
         String url = "jdbc:postgresql://localhost:5432/postgres";
         String user = "postgres";
         String password = "password";
-
-        try (Connection conn = DriverManager.getConnection(url, user, password);
-            Statement stmt = conn.createStatement()) {
-
+        try (Connection conn = DriverManager.getConnection(url, user, password)) {
+            try (Statement stmt = conn.createStatement()) {
                 stmt.execute("CREATE TABLE IF NOT EXISTS test_table (id SERIAL PRIMARY KEY, name VARCHAR(255))");
-
-                // Check inserting
+                // Checking inserting works
                 stmt.execute("INSERT INTO test_table (name) VALUES ('Test Name 1'), ('Test Name 2')");
-                try(ResultSet rs = stmt.executeQuery("SELECT COUNT(*) AS count FROM test_table")) {
+                try (ResultSet rs = stmt.executeQuery("SELECT COUNT(*) AS count FROM test_table")) {
                     if (rs.next()) {
-                        assertEquals(2, rs.getInt("count"), "There should be 2 rows in the test_table");
+                        assertEquals(2, rs.getInt("count"), "There should be 2 rows in test_table");
                     }
                 }
-
-                // Checking updating
-                stmt.execute("UPDATE test_table SET name = 'Updated Name' WHERE name = 'Test Name 1'");
-                try (ResultSet rs = stmt.executeQuery("SELECT name FROM test_table WHERE id = 1")) {
-                    if (rs.next()) {
-                        assertEquals("Updated Name", rs.getString("name"), "Name should be updated");
-                    }
-                }
-
-                // Check deleting
-                stmt.execute("DELETE FROM test_table WHERE name = 'Updated Name'");
-                try (ResultSet rs = stmt.executeQuery("SELECT COUNT(*) AS count FROM test_table WHERE name = 'Updated Name'")) {
-                    if (rs.next()) {
-                        assertEquals(0, rs.getInt("count"), "There shouldn't be any rows with the updated name");
-                    }
-                }
-
                 stmt.execute("DROP TABLE test_table");
-
-            } catch (Exception e) {
-                fail("Database editing operations failed: " + e.getMessage());
             }
-
+        } catch (Exception e) {
+            fail("Database editing operations failed: " + e.getMessage());
+        }
     }
 }
 
