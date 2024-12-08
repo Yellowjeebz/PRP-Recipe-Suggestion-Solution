@@ -21,7 +21,7 @@ CREATE TABLE recipe_ingredients
     quantity integer NOT NULL,
     PRIMARY KEY (recipe_ID, ingredient_ID),
     FOREIGN KEY (recipe_ID) references recipe(recipe_ID),
-    FOREIGN KEY (recipe_ID) references ingredients(ingredient_ID)
+    FOREIGN KEY (ingredient_ID) references ingredients(ingredient_ID)
 );
 
 CREATE TABLE student_house 
