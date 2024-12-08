@@ -49,7 +49,7 @@ Screenshots: https://docs.google.com/document/d/1rPDiQx314RmUi7b1leXQcHVeWyWl4ev
 
 - **Pull Request Template**:
      When making PRs/commits, write with as much detail and explanation as to why the changes you've made have been implemented. 
-     Branches should following naming conventions (i.e. fridge-database-Maya-Patch-CSV) so that this can be tracked in the history log of closed PRs/commits.
+     Branches should following naming conventions (i.e. feature/fridge-database-patch-CSV) so that this can be tracked in the history log of closed PRs/commits.
      Write info in the template as follows:
 
 #### Contribution Guidelines (Things to consider/include):
@@ -93,7 +93,6 @@ Screenshots: https://docs.google.com/document/d/1rPDiQx314RmUi7b1leXQcHVeWyWl4ev
 ### **Modules/Sections of project and Responsbilities**  
 - **Fridge Content Management**: 
 
-
 ---
 
 ## **Deadlines and Unit Goals**  
@@ -101,15 +100,16 @@ Screenshots: https://docs.google.com/document/d/1rPDiQx314RmUi7b1leXQcHVeWyWl4ev
 |---------------------------|--------------------------------------------------------|--------------------|
 | Milestone A               | ~~Design Database~~                                        |(02/12) Done|
 | Milestone B               | ~~Populate database with fridge and recipe data~~          |(06/12) Done|
-| Milestone C               | Develop backend logic for recipe categorisation and shopping list logic  |07/12|
+| Milestone C               | Develop backend logic for recipe categorisation  |07/12|
 | Milestone D               | Develop backend logic for personalised shopping lists  |07/12|
-| Milestone E               | Create UI for fridge contents and recipe suggestions   |07/12|
-| Milestone F               | Create UI for detailed recipe viewsfridge contents and recipe suggestions   |08/12|
-| Milestone G               | Testing and optimisation for deployment                | Ongoing, but final testing to be done by 10/12|
-| Milestone H               | Project to be containerised             |09/12|
-| Milestone H               | Completed Implementation             |09/12|
-| Milestone H               | Project Summary + Report            |10/12-11/12|
-| Milestone H               | Individual Project Reflections            |11/12-12/12|
+| Milestone E               | Create UI for recipe suggestions based on fridge contents  |07/12|
+| Milestone F               | Create UI for shopping lists  |07/12|
+| Milestone G               | Create UI for detailed recipe views  |08/12|
+| Milestone H               | Testing and optimisation for deployment                | Ongoing, but final testing to be done by 10/12|
+| Milestone I               | Project to be containerised             |09/12|
+| Milestone J               | Completed Implementation             |09/12|
+| Milestone K               | Project Summary + Report            |10/12-11/12|
+| Milestone L               | Individual Project Reflections            |11/12-12/12|
 
 ---
 
