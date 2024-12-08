@@ -44,3 +44,40 @@ LT
     - Set up Gradle ready for backend development.
     - Gradle will be used for testing and using libraries to connect the frontend and database together
     - Set up the build to work in our repository environment
+
+## 07/12
+LD:
+- Added React to the repository
+- Made a template GUI
+
+MS: 
+- Fixed an issue where when csv put into psql, get a '/r' at the end and some characters go wrong. '-' becomes something else.
+- Approved PRs relating to database from LT and vice versa
+- Integration testing with csv files
+	- Put database -> psql
+	- Writing sql statements
+- Discussed layout with LD to help him understand the improvements to viability made to the EDR ie which data he needs to include in the interface design
+
+LT:
+- Considered whether to continue development to work just to the versions LT's local device (for now hardcoding credentials), or making it work on all different versions
+    - Considered the fact that this is just a prototype / proof of concept. 
+    - LT will for now make it just work on his device. Later, once the code works, then we will focus on it working on all systems, using containerisation.
+- Started on test-driven development - started writing Junit tests
+
+PF 
+- Approved most PRs to main
+- Added docker ready for containerisation of LT's work
+    - Builds using Gradle implemented by LT
+- Redesigned LD's GUI sketches
+- Custom workflows to GitHub Actions
+- Kept Kanban up to date, ensuring that issues are assigned to the corresponding Group member
+
+Extra Notes:
+- We when first developing did the 3-branch method. but now with integration ,we need to use each others code so we are using 1 dev branch instead.
+    - we didn't want to push to main until we knew everytihng worked.
+    - started on 3, then moved to 1 dev branch (fridge-integration)
+- Great use of naming conventions 'feature/' for new branches when adding features
+    
+
+
+
