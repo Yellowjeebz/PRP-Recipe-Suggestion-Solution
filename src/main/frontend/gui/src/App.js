@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FridgeContents from "./FridgeContents";
 import RecipeSuggestions from "./RecipeSuggestions";
+import './App.css'; // Ensure this line imports the CSS file
 
 const App = () => {
   const [fridgeContents] = useState([
@@ -23,24 +24,22 @@ const App = () => {
         ingredients: ["Egg", "Butter"],
       },
     ],
-    incomplete: [
-      {
-        name: "Beef Stew",
-        steps: ["Chop vegetables", "Cook meat"],
-        ingredients: ["Beef", "Carrots", "Potatoes"],
-      },
-    ],
   });
 
   return (
     <div className="app">
       <h1>Recipe Suggestion System</h1>
-      <div className="content">
-        <FridgeContents contents={fridgeContents} />
-        <RecipeSuggestions recipes={recipes} />
+      <div className="black-rectangle">
+        <div className="content">
+          <div className="flex-container">
+            <RecipeSuggestions recipes={recipes} />
+            <FridgeContents contents={fridgeContents} />
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
 export default App;
+
