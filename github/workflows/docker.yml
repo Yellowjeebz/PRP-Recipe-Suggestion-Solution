@@ -18,3 +18,13 @@ jobs:
 
 steps:
   - name: "Checkout repository"
+    uses: actions/checkout@v4
+
+  - name: "Configure Docker metadata using Docker/metadata-action"
+    uses: docker/metadata-action@v5
+    with:
+      images: ghcr.io/Yellowjeebz/PRP-Recipe-Suggestion-Solution
+      tags: |
+        type=sha
+
+

@@ -84,7 +84,7 @@ Screenshots: https://docs.google.com/document/d/1rPDiQx314RmUi7b1leXQcHVeWyWl4ev
 
 ### **Project Responsibilities**  
 #### **Team Members and Roles**  
-- **Git and Project Manager-** Phoebe Farrelly
+- **GitHub, Containerisation and Project Manager-** Phoebe Farrelly
 - **Database Lead-** Maya Sahota
 - **Lead Developer-** Luke Thornley
 - **GUI Designer-** Luke Deery
