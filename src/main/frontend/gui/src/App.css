@@ -1,38 +1,41 @@
-.App {
+.app {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.black-rectangle {
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 50px;
+  color: rgb(0, 0, 0); /* Text color to contrast with the black background */
+  border: 3px solid black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.content {
+  padding: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flex-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.recipe-suggestions {
+  flex: 1;
+  margin-right: 10px; /* Adjust as needed */
+  border: 2px solid black; /* Separate black border for RecipeSuggestions */
+  padding: 10px; /* Add padding for better appearance */
+  border-radius: 50px;
+}
+.fridge-contents {
+  flex: 1;
+  margin-left: 10px; /* Adjust as needed */
+  border: 2px solid black; /* Separate black border for FridgeContents */
+  padding: 10px;
+  border-radius: 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.fridge-contents ul,
+.recipe-suggestions ul {
+  list-style-type: none;
+  padding: 0;
 }

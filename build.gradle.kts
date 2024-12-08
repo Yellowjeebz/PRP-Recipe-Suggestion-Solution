@@ -21,7 +21,7 @@ sourceSets {
             setSrcDirs(listOf("src/main/backend/java"))
         }
         resources {
-            setSrcDirs(listOf("src/main/backend/resources"))
+            setSrcDirs(listOf("src/main/resources"))
         }
     }
     test {
@@ -74,4 +74,11 @@ application {
 tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+}
+
+tasks.register<JavaExec>("MakeDatabase") {
+    group = "database"
+    description = "Creates and Populate Database"
+    classpath = sourceSets["main"].runtimeClasspath
+    mainClass.set("org.example.CreateDatabase")
 }

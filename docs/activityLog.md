@@ -47,8 +47,10 @@ LT
 
 ## 07/12
 LD:
-- Added React to the repository
+- Added a React App to the repository
+    - Had a few version issues, but these were rectifieds
 - Made a template GUI
+    - Writing javascript, building the plan set out yesterday
 
 MS: 
 - Fixed an issue where when csv put into psql, get a '/r' at the end and some characters go wrong. '-' becomes something else.
@@ -77,7 +79,3 @@ Extra Notes:
     - we didn't want to push to main until we knew everytihng worked.
     - started on 3, then moved to 1 dev branch (fridge-integration)
 - Great use of naming conventions 'feature/' for new branches when adding features
-    
-
-
-
