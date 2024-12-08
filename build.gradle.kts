@@ -77,7 +77,7 @@ tasks.named<Test>("test") {
 }
 
 tasks.register<JavaExec>("MakeDatabase") {
-    group = "database"
+    group = "application"
     description = "Creates and Populate Database"
     classpath = sourceSets["main"].runtimeClasspath
     mainClass.set("org.example.CreateDatabase")
