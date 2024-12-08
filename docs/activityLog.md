@@ -76,6 +76,48 @@ PF
 
 Extra Notes:
 - We when first developing did the 3-branch method. but now with integration ,we need to use each others code so we are using 1 dev branch instead.
-    - we didn't want to push to main until we knew everytihng worked.
+    - we didn't want to push to main until we knew everything worked.
     - started on 3, then moved to 1 dev branch (fridge-integration)
 - Great use of naming conventions 'feature/' for new branches when adding features
+
+## 08/12
+LT:
+- Didn't have a chance to work with MS, as slight issues with compatibility of code (maybe need contaiseraion)
+- Made the process of creating the database automatic, through a Gradle command
+- Helped with GitHub
+
+MS:
+- wrote Java code to integrate the SQL into the backend 
+    - recipe categorisation
+    - fridge contents display
+- discussed with LD how he wants the data to be given to him to display in the frontend
+- fixed some issues with the database
+    
+LD:
+- got more familiar with React
+- came up with a workflow to implement the forntend using data from the backend
+- liaised with MS about the format data will be sent in to the frontend
+- create a first React prototype of the GUI (not working jsut a visual)
+- tried to set up postgresql (but had some issues)
+
+PF:
+- Continued to edit activityLog and meeting notes with everyone's work
+- Created a Requirements Analysis and filled this is as per Groups' edits to the EDR and read through the EDR again abstracting important features/requirements
+- Got the Custom CI Workflows/Actions / docker.yml / java.yml/ build.yml to finally work, but these were set to reject all code in main, so had to disable actions.
+- Made Junit test for editing the database, creating a database, and then made these more efficient/concise
+- Sketched GUI ideas to help LD visualise how he'd implement this
+- Organised the repo, deleting branches, continuing to review/approve big pull requests, and deleting unused branches
+
+### Extra notes
+    Reminder of how changes are made:
+        git checkout [base branch]
+        git pull origin [base branch]
+        git checkout [new]
+        git rebase [base branch]
+        git push origin [new]
+
+    DO NOT REBASE 2X - communicate with team first!
+
+
+
+
