@@ -45,3 +45,9 @@ CREATE TABLE fridge_contents(
     FOREIGN KEY (student_ID) references student_house(student_ID)
 );
 
+--populating csv files
+COPY recipe FROM '/main/database/recipedata.csv' DELIMITER ',' CSV HEADER;
+COPY ingredients FROM '/main/database/ingredientsdata.csv' DELIMITER ',' CSV HEADER;
+COPY recipe_ingredients FROM '/main/database/recipe_ingredientsdata.csv' DELIMITER ',' CSV HEADER;
+COPY student_house FROM '/main/database/student_housedata.csv' DELIMITER ',' CSV HEADER;
+COPY fridge_contents FROM '/main/database/fridge_contentsdata.csv' DELIMITER ',' CSV HEADER;
