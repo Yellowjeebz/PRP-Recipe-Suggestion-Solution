@@ -8,7 +8,7 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/data.json") // Fetch from the public directory
+    fetch("/data.json") // Fetched from .../gui/public/data.json
       .then((response) => response.json())
       .then((data) => {
         setFridgeContents(data.fridgeContents);
