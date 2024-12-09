@@ -22,11 +22,17 @@ public class ConnectDatabase {
              //this section makes 2 arrays storing the record ids for complete and semi complete recipes
              int total_percentage=0;
              int current_student_ID=3;
+             stmt.execute("SELECT COUNT(recipe_ID) AS num_recipes FROM recipe;");
+
              String num_rec_sql = "SELECT COUNT(recipe_ID) AS num_recipes FROM recipe;";
              ResultSet rs = stmt.executeQuery(num_rec_sql); 
              //num_recipes stores the number of recipes
-             int inum_recipes= Integer.valueOf(rs.getString("num_recipes"));
- 
+             int inum_recipes = 0;
+            while (rs.next()) { 
+                System.out.println("hi");
+                inum_recipes= Integer.valueOf(rs.getString("num_recipes"));
+            }
+            System.out.println(inum_recipes);
              ArrayList<Integer> complete_recipe_IDs = new ArrayList<>(); //added import for arraylist
              ArrayList<Integer> semi_recipe_IDs = new ArrayList<>(); 
          //    String[] complete_recipe_names = new String [num_recipes];
