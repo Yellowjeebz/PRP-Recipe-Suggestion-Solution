@@ -1,30 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import FridgeContents from "./FridgeContents";
 import RecipeSuggestions from "./RecipeSuggestions";
-import './App.css'; // Ensure this line imports the CSS file
 
 const App = () => {
-  const [fridgeContents] = useState([
-    { name: "Egg", date: "2024-12-10" },
-    { name: "Banana", date: "2024-12-09" },
-    { name: "Milk", date: "2024-12-08" },
-  ]);
-  const [recipes] = useState({
-    complete: [
-      {
-        name: "Banana Pancakes",
-        steps: ["Mix ingredients", "Cook on skillet"],
-        ingredients: ["Banana", "Egg", "Milk"],
-      },
-    ],
-    "semi-complete": [
-      {
-        name: "Scrambled Eggs",
-        steps: ["Crack eggs", "Cook on pan"],
-        ingredients: ["Egg", "Butter"],
-      },
-    ],
-  });
+  const [fridgeContents, setFridgeContents] = useState([]);
+  const [recipes, setRecipes] = useState({ complete: [], "semi-complete": [] });
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("/data.json") // Fetch from the public directory
+      .then((response) => response.json())
+      .then((data) => {
+        setFridgeContents(data.fridgeContents);
+        setRecipes(data.recipes);
+        setIsLoading(false);
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="app">
@@ -42,4 +38,3 @@ const App = () => {
 };
 
 export default App;
-
