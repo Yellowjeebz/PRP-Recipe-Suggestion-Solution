@@ -118,6 +118,28 @@ PF:
 
     DO NOT REBASE 2X - communicate with team first!
 
+## 09/12
+MS:
+- Worked on code, Gradle only ran on LTs laptop so MS progrmamed on LTs laptop
+  - Technically, this means the prototype is complete.
+    - But aspirationally, this should be displayed on a GUI rather than the terminal
 
+LT:
+- Fixed a bug created by one of the JUnit tests
+- Started the summary for the report
+- Started creating a JSON output for LD's GUI
+  - Considered 3 options:
+    - Client/Server (not viable with this much time left)
+    - Output MS's output in JSON format
+    - Hardcode data just to show the functionality of LD's GUI
 
+LD:
+- Considered a change to JavaFX, but decided to stick with React
+- Created an isolated GUI that has the functionality of the designs
+- Liaised with LT to decide on a JSON input for the GUI
 
+PF:
+- Started on the technical writeup of the report
+- Isolated custom CI workflows that didn't work to fix the docker.yml
+  - This now works and packages are automatically built by docker
+- Liaised with LT who wants the database to also be containerised
