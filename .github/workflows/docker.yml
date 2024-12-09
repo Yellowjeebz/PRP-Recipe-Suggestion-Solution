@@ -20,21 +20,22 @@ jobs:
       - name: "Set up JDK 17"
         uses: actions/setup-java@v3
         with:
-          distribution: 'temurin' # Use Eclipse Temurin as the JDK
+          distribution: 'temurin'
           java-version: '17'
 
       - name: "Checkout repository"
         uses: actions/checkout@v4
 
-      - name: "Run Gradle build"
+      - name: "Run Gradle installDist"
         run: gradle installDist
 
-      - name: "Debug Gradle output"
+      - name: "Debug Gradle output dynamically"
         run: |
-          echo "Listing Gradle build output:"
+          echo "Checking Gradle output dynamically..."
           ls -R build/install
-          echo "Checking if app directory exists:"
-          ls -la build/install/<application-name>/bin
+          output_dir=$(ls build/install)
+          echo "Found output directory: $output_dir"
+          ls -la build/install/$output_dir/bin
 
       - name: "Configure Docker metadata using Docker/metadata-action"
         id: meta
