@@ -6,7 +6,7 @@
   background-color: rgb(255, 255, 255);
   padding: 20px;
   border-radius: 50px;
-  color: rgb(0, 0, 0); /* Text color to contrast with the black background */
+  color: rgb(0, 0, 0);
   border: 3px solid black;
 }
 
@@ -21,15 +21,16 @@
 
 .recipe-suggestions {
   flex: 1;
-  margin-right: 10px; /* Adjust as needed */
-  border: 2px solid black; /* Separate black border for RecipeSuggestions */
-  padding: 10px; /* Add padding for better appearance */
+  margin-right: 10px;
+  border: 2px solid black;
+  padding: 10px;
   border-radius: 50px;
 }
+
 .fridge-contents {
   flex: 1;
-  margin-left: 10px; /* Adjust as needed */
-  border: 2px solid black; /* Separate black border for FridgeContents */
+  margin-left: 10px;
+  border: 2px solid black;
   padding: 10px;
   border-radius: 50px;
 }
@@ -39,7 +40,8 @@
   list-style-type: none;
   padding: 0;
 }
-/* Modal overlay and layout */
+
+
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -82,6 +84,11 @@
   margin-top: 0;
 }
 
+.shopping-list h3 {
+  margin-top: 20px;
+  color: #000000;
+}
+
 .close-button {
   position: absolute;
   top: 10px;
@@ -96,4 +103,3 @@
   cursor: pointer;
   text-decoration: underline;
 }
-

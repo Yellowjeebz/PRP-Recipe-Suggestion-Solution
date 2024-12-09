@@ -1,44 +1,3 @@
-// import React from "react";
-
-// const RecipeSuggestions = ({ recipes }) => {
-//   return (
-//     <div className="recipe-suggestions">
-//       <h2>Recipes</h2>
-
-//       {["Complete", "Semi-Complete"].map((category) => (
-//         <div key={category}>
-//           <h3>{category}</h3>
-
-//           <ul>
-//             {recipes[category.toLowerCase()].map((recipe) => (
-//               <li key={recipe.name}>
-//                 <h4>{recipe.name}</h4>
-
-//                 <p>Steps:</p>
-
-//                 <ul>
-//                   {recipe.steps.map((step, idx) => (
-//                     <li key={idx}>{step}</li>
-//                   ))}
-//                 </ul>
-
-//                 <p>Ingredients:</p>
-
-//                 <ul>
-//                   {recipe.ingredients.map((ing, idx) => (
-//                     <li key={idx}>{ing}</li>
-//                   ))}
-//                 </ul>
-//               </li>
-//             ))}
-//           </ul>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default RecipeSuggestions;
 import React, { useState } from "react";
 import './App.css'; // Add this to style the modal and layout
 
@@ -61,7 +20,7 @@ const RecipeSuggestions = ({ recipes }) => {
             {recipes[category.toLowerCase()].map((recipe) => (
               <li
                 key={recipe.name}
-                onClick={() => setSelectedRecipe(recipe)} // Set the clicked recipe
+                onClick={() => setSelectedRecipe(recipe)} // Set recipe displayed
                 className="recipe-item"
               >
                 <h4>{recipe.name}</h4>
@@ -71,7 +30,7 @@ const RecipeSuggestions = ({ recipes }) => {
         </div>
       ))}
 
-      {/* Modal for Recipe Details */}
+      {/* Modal for Recipe info */}
       {selectedRecipe && (
         <div className="modal-overlay">
           <div className="modal">
@@ -91,10 +50,24 @@ const RecipeSuggestions = ({ recipes }) => {
               <div className="ingredients">
                 <h3>Ingredients</h3>
                 <ul>
-                  {selectedRecipe.ingredients.map((ing, idx) => (
-                    <li key={idx}>{ing}</li>
-                  ))}
+                  {(selectedRecipe.ingredients || selectedRecipe.ingredientsInFridge).map(
+                    (ing, idx) => (
+                      <li key={idx}>{ing}</li>
+                    )
+                  )}
                 </ul>
+
+                {/* Shopping list if incomplete*/}
+                {selectedRecipe.ingredientsNeeded && (
+                  <div className="shopping-list">
+                    <h3>Shopping List</h3>
+                    <ul>
+                      {selectedRecipe.ingredientsNeeded.map((item, idx) => (
+                        <li key={idx}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             </div>
           </div>

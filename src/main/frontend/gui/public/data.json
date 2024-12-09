@@ -12,18 +12,20 @@
           "ingredients": ["Banana", "Egg", "Milk"]
         },
         {
-          "name": "Fagetti Fartenese",
+          "name": "spagetti Fartenese",
           "steps": ["Mix ingredients", "Cook on skillet"],
           "ingredients": ["Batty", "Egg", "Soy", "Rice", "Rice", "Rice"]
         }
       ],
       "semi-complete": [
         {
-          "name": "Scrambled Eggs",
+          "name": "Scrambled Eggs on Toast",
           "steps": ["Crack eggs", "Cook on pan"],
-          "ingredients": ["Egg", "Butter"]
+          "ingredients": ["Egg", "Butter"],
+          "ingredientsNeeded": ["Toast"]
         }
       ]
     }
+
   }
   
