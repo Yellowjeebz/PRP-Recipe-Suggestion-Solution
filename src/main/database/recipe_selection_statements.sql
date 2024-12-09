@@ -9,11 +9,6 @@ SELECT rec.recipe_name AS current_recipe_name, ing.ingredient_ID AS current_ingr
 --this statement will return the number of recipes (used to loop through recipe_IDs)
 SELECT COUNT(recipe_ID) AS num_recipes FROM recipe;
 
-
--- this statement will select the recipe information to be displayed on the recipe selection page
-SELECT recipe_name FROM recipe WHERE recipe_ID=current_complete_recipe;
-
-
 -- this statement will select the recipe information to be displayed on the recipe selection page
 --current_complete_recipe needs to be set
 SELECT recipe_name, recipe_ID FROM recipe WHERE recipe_ID=current_complete_recipe;
@@ -22,3 +17,6 @@ SELECT recipe_name, recipe_ID FROM recipe WHERE recipe_ID=current_complete_recip
 -- this statement will select the recipe information to be displayed on the recipe selection page
 --current_semi_recipe needs to be set
 SELECT recipe_name, recipe_ID FROM recipe WHERE recipe_ID=current_semi_recipe;
+
+--this statement will select the information to be displayed in the fridge contents part
+SELECT fridgecont.fridge_ingredient_ID, ing.ingredient_name, fridgecont.ingredient_quantity, fridgecont.ingredient_date FROM fridge_contents fridgecont JOIN ingredients ing ON fridgecont.fridge_ingredient_ID = ing.ingredient_ID WHERE fridgecont.student_ID=current_student_ID;
