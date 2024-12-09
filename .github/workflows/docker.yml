@@ -17,6 +17,12 @@ jobs:
       contents: read
 
     steps:
+      - name: "Set up JDK 17"
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin' # Use Eclipse Temurin as the JDK
+          java-version: '17'
+
       - name: "Checkout repository"
         uses: actions/checkout@v4
 
