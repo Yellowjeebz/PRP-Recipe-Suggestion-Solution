@@ -29,13 +29,10 @@ jobs:
       - name: "Run Gradle installDist"
         run: gradle installDist
 
-      - name: "Debug Gradle output dynamically"
+      - name: "Log Gradle installDist output"
         run: |
-          echo "Checking Gradle output dynamically..."
+          echo "Gradle installDist output:"
           ls -R build/install
-          output_dir=$(ls build/install)
-          echo "Found output directory: $output_dir"
-          ls -la build/install/$output_dir/bin
 
       - name: "Configure Docker metadata using Docker/metadata-action"
         id: meta
