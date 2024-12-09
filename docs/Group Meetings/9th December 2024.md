@@ -8,6 +8,7 @@ __LT__
     - Work with MS to use her queries along with some code to finish producing a list of complete and semi-complete recipes
 - (Shopping Lists) 
     - Create a shopping list for every semicomplete recipe
+- Start writing Summary for the report
 
 __MS__
 - (Recipe Categorisation)  
