@@ -1,4 +1,4 @@
-# Workflow (update build) to run whenever we update main
+#workflow (update build) to run whenever we update main
 name: "Update Docker Build"
 on:
   push:
@@ -12,6 +12,7 @@ jobs:
     name: "Build"
     runs-on: "ubuntu-latest"
 
+    #workflow actions have permissions - normally read-only but we want to upload a container image that we're building
     permissions:
       packages: write
       contents: read
@@ -25,14 +26,17 @@ jobs:
 
       - name: "Checkout repository"
         uses: actions/checkout@v4
+        # Checks out the repository where the Dockerfile and source code are stored
 
       - name: "Run Gradle installDist"
         run: gradle installDist
+        # Runs the Gradle installDist task to prepare the build artefacts
 
       - name: "Log Gradle installDist output"
         run: |
           echo "Gradle installDist output:"
           ls -R build/install
+        # Logs the Gradle output for debugging and verification
 
       - name: "Configure Docker metadata using Docker/metadata-action"
         id: meta
@@ -42,6 +46,7 @@ jobs:
           tags: |
             type=sha
             type=raw,value=latest
+        # Configures Docker metadata for tagging and labelling the container image
 
       - name: "Authenticate with Docker"
         uses: docker/login-action@v3
@@ -49,9 +54,11 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+        # Logs in to Docker registry using GitHub's secrets
 
       - name: "Set up Docker buildx"
         uses: docker/setup-buildx-action@v3
+        # Sets up Docker buildx, allowing multi-platform builds
 
       - name: "Build and upload the Docker image"
         uses: docker/build-push-action@v6
@@ -60,3 +67,4 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+        #builds the Docker image and pushes it to the specified container registry
