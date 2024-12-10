@@ -13,7 +13,7 @@ RUN echo "Checking contents of /usr/src/ssh_rss/build/install:" && \
     ls -R /usr/src/ssh_rss/build/install
 
 #Second stage:
-FROM openjdk:17-jdk-slim as stage-1
+FROM openjdk:21-jdk-slim as stage-1
 # Start with a new base image - from the registry
 WORKDIR /root/
 COPY --from=stage-0 /usr/src/ssh_rss/build/install/PRP-Recipe-Suggestion-Solution .
