@@ -1,19 +1,22 @@
 version: '3.8'
 
 services:
-  app:
-    build:
-      context: .       # Current directory
-      dockerfile: Dockerfile
+  db:
+    image: postgres:15 
     ports:
-      - "8080:8080"    # Map container port 8080 to host port 8080
-    depends_on:
-      - db
+      - "5432:5432"  
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydb
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
 
 
   createdatabase:
     build:
-      context: .       # Current directory
+      context: .       
       dockerfile: Dockerfile
     environment:
       MAIN_CLASS: org.example.CreateDatabase
@@ -23,10 +26,19 @@ services:
 
   recipeselectionpage:
     build:
-      context: .       # Current directory
+      context: .       
       dockerfile: Dockerfile
     environment:
       MAIN_CLASS: org.example.RecipeSelectionPage
+    depends_on:
+      - db
+      
+  app:
+    build:
+      context: .       
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"    
     depends_on:
       - db
 
@@ -37,17 +49,9 @@ services:
     #   DB_PASSWORD: password
     #   DB_NAME: mydb
 
-  db:
-    image: postgres:15 # Use the official PostgreSQL image
-    ports:
-      - "5432:5432"    # Map container port 5432 to host port 5432
-    environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: mydb
-    volumes:
-      - db-data:/var/lib/postgresql/data
-      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
 
 volumes:
   db-data:
+
+
