@@ -24,7 +24,6 @@ RUN apt-get update && apt-get install -y \
     curl \
     python3 \
     python3-pip \
-    && pip3 install docker-compose \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Debugging (optional: check installed versions)
