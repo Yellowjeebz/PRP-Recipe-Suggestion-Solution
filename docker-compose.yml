@@ -9,12 +9,33 @@ services:
       - "8080:8080"    # Map container port 8080 to host port 8080
     depends_on:
       - db
+
+
+  createdatabase:
+    build:
+      context: .       # Current directory
+      dockerfile: Dockerfile
     environment:
-      DB_HOST: db
-      DB_PORT: 5432
-      DB_USER: user
-      DB_PASSWORD: password
-      DB_NAME: mydb
+      MAIN_CLASS: org.example.CreateDatabase
+    depends_on:
+      - db
+
+
+  recipeselectionpage:
+    build:
+      context: .       # Current directory
+      dockerfile: Dockerfile
+    environment:
+      MAIN_CLASS: org.example.RecipeSelectionPage
+    depends_on:
+      - db
+
+    # environment:
+    #   DB_HOST: db
+    #   DB_PORT: 5432
+    #   DB_USER: user
+    #   DB_PASSWORD: password
+    #   DB_NAME: mydb
 
   db:
     image: postgres:15 # Use the official PostgreSQL image
