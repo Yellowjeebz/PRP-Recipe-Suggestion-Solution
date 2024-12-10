@@ -15,7 +15,7 @@ public class RecipeDetailsPage {
         
         try (Connection conn = DriverManager.getConnection(url, user, password); ) {
             int current_student_ID=3; //This stores the student ID of min Briggs
-            String current_recipe_name= "Eggy Bread";
+            String current_recipe_name= "Broccoli Cheese";
             
             //this section will select the information that will be shown in the fridge contents section
             String recipe_steps_sql= "SELECT recipe_steps, recipe_name FROM recipe WHERE recipe_name=?;";
@@ -36,6 +36,21 @@ public class RecipeDetailsPage {
                     System.out.println("Ingredients:");
                     while (rs.next()){
                         System.out.println(rs.getString("quantity_needed")+rs.getString("ingredient_units")+" "+ rs.getString("ingredient_name"));
+                    }
+                    String recipe_shopping_list_sql= "SELECT recing.quantity AS quantity_needed,fridgecont.ingredient_quantity AS fridge_quantity, ing.ingredient_name, ing.ingredient_units FROM recipe rec JOIN recipe_ingredients recing ON rec.recipe_ID = recing.recipe_ID JOIN ingredients ing ON recing.ingredient_ID = ing.ingredient_ID JOIN fridge_contents fridgecont ON fridgecont.fridge_ingredient_ID = ing.ingredient_ID WHERE recipe_name = ? AND fridgecont.student_ID=?;";
+                    try (PreparedStatement pstmt3 = conn.prepareStatement(recipe_shopping_list_sql)) {
+                        pstmt3.setString(1, current_recipe_name);
+                        pstmt3.setInt(2, current_student_ID);
+                        rs = pstmt3.executeQuery();
+                        //this section is for outputting the shopping list
+                        System.out.println("\nShopping List:");
+                        while (rs.next()){
+                            int qn=rs.getInt("quantity_needed");
+                            int fq=rs.getInt("fridge_quantity");
+                            if (fq-qn<0){
+                                System.out.println((qn-fq)+rs.getString("ingredient_units")+" "+ rs.getString("ingredient_name"));
+                            }
+                        }
                     }
                 }
 
