@@ -23,8 +23,8 @@ COPY --from=stage-0 /usr/src/ssh_rss/build/install/PRP-Recipe-Suggestion-Solutio
 RUN apt-get update && apt-get install -y \
     curl \
     python3 \
-    pip \
-    && pip install docker-compose \
+    python3-pip \
+    && pip3 install docker-compose \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Debugging (optional: check installed versions)
