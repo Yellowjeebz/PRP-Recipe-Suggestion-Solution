@@ -5,7 +5,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 public class FridgeContentsPage {
@@ -15,7 +14,7 @@ public class FridgeContentsPage {
         String password = "password";
 
         
-        try (Connection conn = DriverManager.getConnection(url, user, password); Statement stmt = conn.createStatement()) {
+        try (Connection conn = DriverManager.getConnection(url, user, password); ) {
             int current_student_ID=3; //This stores the student ID of min Briggs
             
             //this section will select the information that will be shown in the fridge contents section
