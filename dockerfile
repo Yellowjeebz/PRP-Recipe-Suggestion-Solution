@@ -8,8 +8,9 @@ COPY . .
 RUN gradle installDist --no-daemon
 # Builds the code (as well as a few artefacts that result from this)
 
-# Debugging (checks the build output)
-RUN ls -R /usr/src/ssh_rss/build/install
+# Debugging: (check on the build output in the first stage)
+RUN echo "Checking contents of /usr/src/ssh_rss/build/install:" && \
+    ls -R /usr/src/ssh_rss/build/install
 
 #Second stage:
 FROM openjdk:17-jdk-slim as stage-1
