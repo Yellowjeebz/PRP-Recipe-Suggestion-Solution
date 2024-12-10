@@ -26,7 +26,8 @@ public class RecipeDetailsPage {
                 if (rs.next()){
                     System.out.println(rs.getString("recipe_name"));
                     System.out.println("Instructions:");
-                    System.out.println(rs.getString("recipe_steps"));
+                    String recipe_instructions= rs.getString("recipe_steps");
+                    System.out.println(recipe_instructions);
                 }
                 String recipe_ingredients_sql= "SELECT recing.quantity AS quantity_needed,fridgecont.ingredient_quantity AS fridge_quantity, ing.ingredient_name, ing.ingredient_units FROM recipe rec JOIN recipe_ingredients recing ON rec.recipe_ID = recing.recipe_ID JOIN ingredients ing ON recing.ingredient_ID = ing.ingredient_ID JOIN fridge_contents fridgecont ON fridgecont.fridge_ingredient_ID = ing.ingredient_ID WHERE recipe_name = ? AND fridgecont.student_ID=?;";
                 try (PreparedStatement pstmt2 = conn.prepareStatement(recipe_ingredients_sql)) {
