@@ -10,8 +10,8 @@ import java.sql.Statement;
 
 public class CreateDatabase {
     public static void main(String[] args){ 
-        String url = "jdbc:postgresql://localhost:5432/postgres";
-        String DBurl = "jdbc:postgresql://localhost:5432/recipe_suggestion_solution";
+        String url = "jdbc:postgresql://db:5432/postgres";
+        String DBurl = "jdbc:postgresql://db:5432/recipe_suggestion_solution";
         String user = "postgres";
         String password = "password";
         String Createsql = "/fridge_database.sql"; 

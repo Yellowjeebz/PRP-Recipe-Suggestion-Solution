@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class RecipeSelectionPage {
 
     public static void main(String[] args){
-        String url = "jdbc:postgresql://localhost:5432/recipe_suggestion_solution";
+        String url = "jdbc:postgresql://db:5432/recipe_suggestion_solution";
         String user = "postgres";
         String password = "password";
 
