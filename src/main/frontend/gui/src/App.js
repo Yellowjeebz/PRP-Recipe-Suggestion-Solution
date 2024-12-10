@@ -4,18 +4,26 @@ import RecipeSuggestions from "./RecipeSuggestions";
 
 const App = () => {
   const [fridgeContents, setFridgeContents] = useState([]);
-  const [recipes, setRecipes] = useState({ complete: [], "semi-complete": [] });
+  const [completeRecipes, setCompleteRecipes] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/data.json") // Fetched from .../gui/public/data.json
+    fetch("/data.json")
       .then((response) => response.json())
       .then((data) => {
-        setFridgeContents(data.fridgeContents);
-        setRecipes(data.recipes);
+        // Transform API data to the structure expected by RecipeSuggestions
+        const transformedRecipes = {
+          complete: data.map((recipe) => ({
+            name: recipe.recipeName,
+            steps: ["Sample step 1", "Sample step 2"], // Placeholder until full API implementation
+            ingredients: ["Sample ingredient 1", "Sample ingredient 2"] // Placeholder
+          })),
+          "semi-complete": [] // No semi-complete recipes yet
+        };
+        setCompleteRecipes(transformedRecipes);
         setIsLoading(false);
       })
-      .catch((error) => console.error("Error fetching data:", error));
+      .catch((error) => console.error("Error fetching completeRecipes data:", error));
   }, []);
 
   if (isLoading) {
@@ -23,16 +31,17 @@ const App = () => {
   }
 
   return (
+    <div className="page" >
     <div className="app">
       <h1>Recipe Suggestion System</h1>
-      <div className="black-rectangle">
         <div className="content">
           <div className="flex-container">
-            <RecipeSuggestions recipes={recipes} />
+            <RecipeSuggestions recipes={completeRecipes} />
             <FridgeContents contents={fridgeContents} />
           </div>
         </div>
-      </div>
+
+    </div>
     </div>
   );
 };

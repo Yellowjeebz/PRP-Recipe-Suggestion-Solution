@@ -1,31 +1,20 @@
-{
-    "fridgeContents": [
-      { "name": "Egg", "date": "2024-12-10" },
-      { "name": "Banana", "date": "2024-12-09" },
-      { "name": "Milk", "date": "2024-12-08" }
-    ],
-    "recipes": {
-      "complete": [
-        {
-          "name": "Banana Pancakes",
-          "steps": ["Mix ingredients", "Cook on skillet"],
-          "ingredients": ["Banana", "Egg", "Milk"]
-        },
-        {
-          "name": "spagetti Fartenese",
-          "steps": ["Mix ingredients", "Cook on skillet"],
-          "ingredients": ["Batty", "Egg", "Soy", "Rice", "Rice", "Rice"]
-        }
-      ],
-      "semi-complete": [
-        {
-          "name": "Scrambled Eggs on Toast",
-          "steps": ["Crack eggs", "Cook on pan"],
-          "ingredients": ["Egg", "Butter"],
-          "ingredientsNeeded": ["Toast"]
-        }
-      ]
-    }
-
+[
+  {
+    "recipeId": 3,
+    "recipeName": "Ham and cheese toastie",
+    "recipeSteps": "1. Heat the air fryer to 190C. Butter the slices of bread on one side each then combine the remaining butter with the mustard and cheese and chives. Season with black pepper. 2. Spread the cheese mixture over the plain sides of the bread then sandwich the ham between the two slices so the buttered sides are facing out. Air-fry for 10 mins and turn once until golden and crunchy on the outside and the cheese has melted in the middle."
+  },
+  {
+    "recipeId": 6,
+    "recipeName": "Cacio e pepe"
+  },
+  {
+    "recipeId": 8,
+    "recipeName": "Pesto and Cheese Rice"
+  },
+  {
+    "recipeId": 9,
+    "recipeName": "Broccoli Pasta"
   }
+]
   
