@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class RecipeDetailsPage {
     public static void main(String[] args){
@@ -43,13 +44,27 @@ public class RecipeDetailsPage {
                         pstmt3.setInt(2, current_student_ID);
                         rs = pstmt3.executeQuery();
                         //this section is for outputting the shopping list
-                        System.out.println("\nShopping List:");
+                        ArrayList<String> shopping_list_items = new ArrayList<>(); 
+                        while (rs.next()){
+                            int qn=rs.getInt("quantity_needed");
+                            int fq=rs.getInt("fridge_quantity");
+                            if (fq-qn<0){
+                                shopping_list_items.add((qn-fq)+rs.getString("ingredient_units")+" "+ rs.getString("ingredient_name")); //this is an array of all the shopping list items in format eg 50g cheese
+                            }
+                        }
+                        if (shopping_list_items.size()>0){
+                            System.out.println("\nShopping List:");
+                        }
+
+
+                        rs = pstmt3.executeQuery();
                         while (rs.next()){
                             int qn=rs.getInt("quantity_needed");
                             int fq=rs.getInt("fridge_quantity");
                             if (fq-qn<0){
                                 System.out.println((qn-fq)+rs.getString("ingredient_units")+" "+ rs.getString("ingredient_name"));
                             }
+                            
                         }
                     }
                 }
