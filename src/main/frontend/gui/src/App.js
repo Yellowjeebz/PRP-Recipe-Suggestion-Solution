@@ -9,7 +9,7 @@ const App = () => {
 
   useEffect(() => {
     const fetchFridgeContents = async () => {
-      const response = await fetch("http://localhost:8080/api/v1/fridgeContents?studentId=3");
+      const response = await fetch("http://localhost:8080/api/fridgeContents?studentId=3");
       const data = await response.json();
       const parsedData = data.map((item) => {
         const [name, expiry] = item.split(" exp:");
@@ -19,18 +19,18 @@ const App = () => {
     };
 
     const fetchCompleteRecipes = async () => {
-      const response = await fetch("http://localhost:8080/api/v1/recipes/complete?studentId=3");
+      const response = await fetch("http://localhost:8080/api/recipes/complete?studentId=3");
       return await response.json();
     };
 
     const fetchSemiCompleteRecipes = async () => {
-      const response = await fetch("http://localhost:8080/api/v1/recipes/semicomplete?studentId=3");
+      const response = await fetch("http://localhost:8080/api/recipes/semicomplete?studentId=3");
       return await response.json();
     };
 
     const fetchRecipeDetails = async (recipeName) => {
       const encodedName = encodeURIComponent(recipeName);
-      const response = await fetch(`http://localhost:8080/api/v1/recipeDetails?studentId=3&recipeName=${encodedName}`);
+      const response = await fetch(`http://localhost:8080/api/recipeDetails?studentId=3&recipeName=${encodedName}`);
       return await response.json();
     };
 
@@ -46,9 +46,9 @@ const App = () => {
           completeRecipeNames.map(async (name) => {
             const details = await fetchRecipeDetails(name);
             return {
-              name: details.recipe_name,
-              steps: details.instructions.split("\n"),
-              ingredients: details.ingredients,
+              name: details[0],
+              steps: details[1].split("\n"),
+              ingredients: details[2],
             };
           })
         );
@@ -57,10 +57,10 @@ const App = () => {
           semiCompleteRecipeNames.map(async (name) => {
             const details = await fetchRecipeDetails(name);
             return {
-              name: details.recipe_name,
-              steps: details.instructions.split("\n"),
-              ingredientsInFridge: details.ingredients,
-              ingredientsNeeded: details.shopping_list,
+              name: details[0],
+              steps: details[1].split("\n"),
+              ingredientsInFridge: details[2],
+              ingredientsNeeded: details[3],
             };
           })
         );
