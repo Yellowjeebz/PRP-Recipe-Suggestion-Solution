@@ -6,7 +6,7 @@ const Fridge = () => {
 
   useEffect(() => {
     // Fetch fridge ingredients from backend
-    axios.get("http://localhost:8080/api/fridge/ingredients")
+    axios.get("http://localhost:8080/api/fridgeContents?studentId=3")
       .then(response => setIngredients(response.data))
       .catch(error => console.error("Error fetching ingredients:", error));
   }, []);
