@@ -29,7 +29,7 @@ public class FridgeContentsPageTest {
     }
 
     @Test
-    public void testPrintlnOutput() {
+    public void testFridgeContentsPage() {
 
 
        FridgeContentsPage.main(new String[]{});
