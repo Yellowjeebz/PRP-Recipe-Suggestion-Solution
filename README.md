@@ -114,7 +114,12 @@ Screenshots: https://docs.google.com/document/d/1rPDiQx314RmUi7b1leXQcHVeWyWl4ev
 ---
 
 ## **Other Notes**
-- **Dependencies**:
-  - Libraries: Picocli
-- **Testing Frameworks**:  
+- **Build Tool**:
   - Gradle
+- **Dependencies**:
+  - Springboot
+  - PostgreSQL JDBC Driver
+  - Picocli
+    
+- **Testing Frameworks**:  
+  - JUnit
