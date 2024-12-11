@@ -42,7 +42,7 @@ public class FridgeContentsService {
 
             return fridgeEntries;
         } catch (Exception e) {
-            System.err.println(e.getMessage());
+            System.out.println(e.getMessage());
             return new ArrayList<>();
         }
     }
