@@ -18,7 +18,7 @@ plugins {
 sourceSets {
     main {
         java {
-            setSrcDirs(listOf("src/main/backend/java"))
+            setSrcDirs(listOf("src/main/java"))
         }
         resources {
             setSrcDirs(listOf("src/main/resources"))
@@ -52,23 +52,27 @@ dependencies {
 
     implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
 	implementation("org.springframework.boot:spring-boot-starter-jdbc")
-
+    implementation("org.springframework.boot:spring-boot-starter-web")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-
+    implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.postgresql:postgresql:42.6.0")
+    implementation("org.springframework.boot:spring-boot-starter-validation")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
 java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+
     toolchain {
-        languageVersion = JavaLanguageVersion.of(23)
+        languageVersion = JavaLanguageVersion.of(21)
     }
 }
 
 application {
     // Define the main class for the application.
-    mainClass = "org.example.App"
+    mainClass = "org.example.Application"
 }
 
 tasks.named<Test>("test") {
