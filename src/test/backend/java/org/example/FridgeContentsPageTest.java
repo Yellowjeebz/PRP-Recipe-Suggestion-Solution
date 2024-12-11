@@ -3,6 +3,7 @@ package org.example;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
+import org.example.TerminalOutput.FridgeContentsPage;
 import org.junit.jupiter.api.AfterEach;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
