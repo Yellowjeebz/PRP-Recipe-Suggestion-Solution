@@ -1,7 +1,7 @@
 # PRP-Recipe-Suggestion-Solution
 A smart home solution for taking food in your fridge and suggesting recipes from the food available.
 
-[The user guide can be found here:](docs/User Guide.md)
+[The user guide can be found here:](docs/User_Guide.md)
 
 ## **Project Overview**  
 This project is for developing the **Recipe Suggestion Solution (RSS)** for the Student Smart Homes (SSH) ecosystem. 
