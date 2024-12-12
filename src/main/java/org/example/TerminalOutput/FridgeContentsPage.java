@@ -9,8 +9,8 @@ import java.util.ArrayList;
 
 public class FridgeContentsPage {
         public static void main(String[] args){
-        String url = "jdbc:postgresql://localhost:5432/recipe_suggestion_solution";
-        String user = "postgres";
+        String url = "jdbc:postgresql://localhost:5432/mydb";
+        String user = "user";
         String password = "password";
 
         
