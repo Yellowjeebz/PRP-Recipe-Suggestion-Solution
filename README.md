@@ -1,6 +1,8 @@
 # PRP-Recipe-Suggestion-Solution
 A smart home solution for taking food in your fridge and suggesting recipes from the food available.
 
+[The user guide can be found here:](docs/User_Guide.md)
+
 ## **Project Overview**  
 This project is for developing the **Recipe Suggestion Solution (RSS)** for the Student Smart Homes (SSH) ecosystem. 
 
@@ -10,9 +12,9 @@ The goal of SSH RSS is to help students optimise their meal preparation by lever
 Screenshots: https://docs.google.com/document/d/1rPDiQx314RmUi7b1leXQcHVeWyWl4evqL6dzKL6eDlM/edit?usp=sharing 
 
 #### Documentation
-[Engineering Design Review (EDR)](src/docs/LukeThornley%20EDR%20-%202398180.pdf)
+[Engineering Design Review (EDR)](docs/LukeThornley%20EDR%20-%202398180.pdf)
 
-[Log of progress](src/docs/activityLog.md)
+[Log of progress](docs/activityLog.md)
 
 ---
 
@@ -114,7 +116,12 @@ Screenshots: https://docs.google.com/document/d/1rPDiQx314RmUi7b1leXQcHVeWyWl4ev
 ---
 
 ## **Other Notes**
-- **Dependencies**:
-  - Libraries: Picocli
-- **Testing Frameworks**:  
+- **Build Tool**:
   - Gradle
+- **Dependencies**:
+  - Springboot
+  - PostgreSQL JDBC Driver
+  - Picocli
+    
+- **Testing Frameworks**:  
+  - JUnit
